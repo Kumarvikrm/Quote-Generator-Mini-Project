@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="./app.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <title>Quote Generator Mini-Project</title>
+</head>
+<body>
+  <div class="quoteBox">
+    <h1>Quote Of The Day</h1>
+    <blockquote  id="quote">Loading...</blockquote>
+    <span id="author">Loading...</span>
+    <div>
+      <button onclick="getQuote(apiUrl)">New Quote</button>
+      <button onclick="tweet()"> <img src="./Img/twitter.png" alt="">Tweet</button>
+    </div>
+  </div>
+</body>
+</html>

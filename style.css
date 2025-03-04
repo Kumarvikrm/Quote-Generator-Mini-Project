@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Playfair Display", serif;
+}
+
+body {
+ background: rgba(170, 225, 249, 0.5);
+}
+
+.quoteBox {
+  background: linear-gradient(to right, #9fadf4, #aad6f0);
+  width: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 10px 20px 0px rgba(105, 102, 102, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.quoteBox:hover {
+  transform: translate(-50%, -50%) scale(1.05); /* 3D scaling effect on hover */
+  box-shadow: 0 20px 40px 0px rgba(105, 102, 102, 0.5);
+}
+
+.quoteBox h1 {
+  font-size: 40px;
+  position: relative;
+}
+
+.quoteBox h1::after {
+  content: "";
+  width: 100px;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(to right, #8897e3, #6db9e6);
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: growLine 1s ease-in-out; /* Line animation */
+}
+
+@keyframes growLine {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100px;
+  }
+}
+
+.quoteBox blockquote {
+  font-size: 26px;
+  min-height: 110px;
+  padding-top: 30px;
+  font-weight: 600;
+  position: relative;
+  animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quoteBox blockquote::before,
+.quoteBox blockquote::after {
+  content: '"';
+  font-size: 36px; /* Increase size of quotation marks */
+  color: #6db9e6; /* Color of quotation marks */
+}
+
+.quoteBox span {
+  display: block;
+  margin-top: 15px;
+  float: right;
+  font-weight: bold;
+  position: relative;
+  color: #313435;
+  animation: slideIn 1s ease-in-out; /* Slide-in animation */
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.quoteBox span::before {
+  content: "";
+  width: 25px;
+  height: 2px;
+  background: linear-gradient(to right, #a2aff0, #86cdf6);
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  border-radius: 3px;
+}
+
+.quoteBox div {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.quoteBox button {
+  border-radius: 25px;
+  border: 1px solid;
+  width: 150px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  position: relative;
+}
+
+/* Unique colors for each button */
+.quoteBox button:nth-child(1) {
+  background-color: #7b8de6;
+  color: #fff;
+  border-color: #7b8de6;
+}
+
+.quoteBox button:nth-child(1):hover {
+  background-color: #f6f7fb; /* Darken color on hover */
+  color: #313435;
+}
+
+.quoteBox button:nth-child(2) {
+  background-color: #ffab61;
+  color: #fff;
+  border-color: #ffab61;
+}
+
+.quoteBox button:nth-child(2):hover {
+  background-color: #ecf1f5; /* Darken color on hover */
+  color: #fd3b05;
+}
+
+.quoteBox button img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.quoteBox button::after {
+  content: "✨"; /* Add emoji to buttons */
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 20px;
+  animation: sparkle 1s infinite; /* Sparkling emoji animation */
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
